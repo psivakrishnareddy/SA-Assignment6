@@ -78,7 +78,7 @@ class Account:
         return self.transaction_db.get_transactions_by_user_id(self.user_id)
     
     
-    def get_balance_v2(self, start_date=None, end_date=None, transaction_type=None, merchant=None):
+    def get_balance(self, start_date=None, end_date=None, transaction_type=None, merchant=None):
         """
         Retrieves the current account balance based on specified criteria for filtering transactions.
 

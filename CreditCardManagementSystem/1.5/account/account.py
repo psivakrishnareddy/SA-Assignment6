@@ -81,13 +81,16 @@ class Account:
     def get_balance(self) -> float:
         """
         Returns the current account balance.
+        
+        \deprecated "This method is deprecated in Version 1.0. Use get_balance_v2() instead, which is an upgraded version."
+        Returns the current account balance.
 
         Returns:
             The current balance (float).
         """
         return self.balance
     
-    def get_balance_v2(self, start_date=None, end_date=None, transaction_type=None, merchant=None):
+    def get_balance_v2(self, start_date=None, end_date=None, transaction_type=None, merchant=None) -> float:
         """
         Retrieves the current account balance based on specified criteria for filtering transactions.
 
