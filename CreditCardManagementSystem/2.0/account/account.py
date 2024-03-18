@@ -1,6 +1,7 @@
 
 from ast import List
-from typing_extensions import deprecated
+import random
+import string
 from credit_card.database import CreditCardDatabase, TransactionDatabase
 from credit_card.transaction import Transaction
 
@@ -76,15 +77,6 @@ class Account:
         """
         return self.transaction_db.get_transactions_by_user_id(self.user_id)
     
-    @deprecated(version="1.0", reason="This method is deprecated in 1.0. Use get_balance_v2() instead.")
-    def get_balance(self) -> float:
-        """
-        Returns the current account balance.
-
-        Returns:
-            The current balance (float).
-        """
-        return self.balance
     
     def get_balance_v2(self, start_date=None, end_date=None, transaction_type=None, merchant=None):
         """
@@ -140,4 +132,75 @@ class Account:
             self.balance += transaction.amount
         else:
             self.balance -= transaction.amount
+
+    def enable_two_factor_authentication(self):
+        """
+        Enables two-factor authentication for the account.
+        """
+        self.two_factor_enabled = True
+        self.generate_verification_code()
+
+    def disable_two_factor_authentication(self):
+        """
+        Disables two-factor authentication for the account.
+        """
+        self.two_factor_enabled = False
+        self.verification_code = None
+
+    def generate_verification_code(self):
+        """
+        Generates a random verification code for two-factor authentication.
+        """
+        self.verification_code = ''.join(random.choices(string.digits, k=6))  # Generate a 6-digit code
+
+    def validate_verification_code(self, verification_code):
+        """
+        Validates the provided verification code for two-factor authentication.
+
+        Parameters:
+        - verification_code (str): The verification code provided by the user.
+
+        Returns:
+        - bool: True if the verification code is valid, False otherwise.
+        """
+        return self.two_factor_enabled and verification_code == self.verification_code
+
+
+    def enable_two_factor_authentication(self, user_id):
+        """
+        Enables two-factor authentication for the specified user account.
+
+        Parameters:
+        - user_id (str): The ID of the user account.
+        """
+        account = self.account_db.get_account_by_user_id(user_id)
+        if account:
+            account.enable_two_factor_authentication()
+
+    def disable_two_factor_authentication(self, user_id):
+        """
+        Disables two-factor authentication for the specified user account.
+
+        Parameters:
+        - user_id (str): The ID of the user account.
+        """
+        account = self.account_db.get_account_by_user_id(user_id)
+        if account:
+            account.disable_two_factor_authentication()
+
+    def verify_authentication_code(self, user_id, verification_code):
+        """
+        Verifies the provided verification code for two-factor authentication.
+
+        Parameters:
+        - user_id (str): The ID of the user account.
+        - verification_code (str): The verification code provided by the user.
+
+        Returns:
+        - bool: True if the verification code is valid, False otherwise.
+        """
+        account = self.account_db.get_account_by_user_id(user_id)
+        if account:
+            return account.validate_verification_code(verification_code)
+        return False        
 
