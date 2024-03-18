@@ -48,7 +48,6 @@ if payment_successful:
   # Update account balance based on the transaction
   user_account.update_balance(Transaction(user_account.user_id,50.00, datetime.now(), "Online Store", True))
   print(f"Current account balance: ${user_account.get_balance():.2f}")
-  print(f"Current account balance: ${user_account.get_balance_v2():.2f}")
 else:
   print("Payment failed!")    
 
