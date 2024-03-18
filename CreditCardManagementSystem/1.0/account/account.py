@@ -8,9 +8,10 @@ class Account:
     Manages a collection of CreditCard and Transaction objects for a user.
     """
     def __init__(self, user_id):
-        self.user_id = user_id
+        self.user_id: str = user_id
         self.credit_card_db = CreditCardDatabase()
         self.transaction_db = TransactionDatabase()
+        self.balance: float = 0.0
 
     def add_card(self, number, expiration_date, cvv):
         """
@@ -73,3 +74,12 @@ class Account:
         - List[Transaction]: A list of Transaction objects representing the transactions.
         """
         return self.transaction_db.get_transactions_by_user_id(self.user_id)
+    
+    def get_balance(self) -> float:
+        """
+        Returns the current account balance.
+
+        Returns:
+            The current balance (float).
+        """
+        return self.balance

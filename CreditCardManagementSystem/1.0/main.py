@@ -27,9 +27,12 @@ print(credit_card_manager.list_accounts())
 print(user_account.get_card(1))
 print(card.get_masked_number())
 
+
 # Printing the available transactions
 for transaction in user_account.get_transactions():
     print(transaction)
+
+print("Balance: " + user_account.balance)    
 
 # Validate session token
 session = credit_card_manager.get_session(token)
