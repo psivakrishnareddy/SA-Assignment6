@@ -1,0 +1,72 @@
+\doxysection{api Namespace Reference}
+\hypertarget{namespaceapi}{}\label{namespaceapi}\index{api@{api}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceapi_adf8747aa592c12403dabf2d6bba615ad}{credit\+\_\+card\+\_\+manager}} = \mbox{\hyperlink{class_credit_card_manager_1_1_credit_card_manager}{Credit\+Card\+Manager}}()
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} \mbox{\hyperlink{namespaceapi_ae0567ec7a0dc442a19c05b7d24dfb151}{user\+\_\+account}} = credit\+\_\+card\+\_\+manager.\+create\+\_\+account("{}user123"{})
+\item 
+\mbox{\hyperlink{namespaceapi_a87da3d8264af1c9427605148f20dd9c4}{token}} = credit\+\_\+card\+\_\+manager.\+create\+\_\+session("{}user123"{})
+\item 
+\mbox{\hyperlink{namespaceapi_a3bc13ef433c58c7e808ef40088f32252}{card}} = \mbox{\hyperlink{classcredit__card_1_1credit__card_1_1_credit_card}{Credit\+Card}}("{}1234567890123456"{}, datetime(2025, 12, 31), "{}123"{})
+\item 
+\mbox{\hyperlink{namespaceapi_a9769c7cca0d4ba3e24516bd80e479b39}{transaction}} = \mbox{\hyperlink{classcredit__card_1_1transaction_1_1_transaction}{Transaction}}(user\+\_\+account.\+user\+\_\+id,100.\+0, datetime.\+now(), "{}Amazon"{})
+\item 
+\mbox{\hyperlink{namespaceapi_aa0823e1ff851f7526e7fc5487718a051}{session}} = credit\+\_\+card\+\_\+manager.\+get\+\_\+session(\mbox{\hyperlink{namespaceapi_a87da3d8264af1c9427605148f20dd9c4}{token}})
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} \mbox{\hyperlink{namespaceapi_ac8b72545960400e567cb234da5b1e592}{account}} = credit\+\_\+card\+\_\+manager.\+get\+\_\+account("{}user123"{})
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} \mbox{\hyperlink{namespaceapi_a6585bc3a1183332eba92b626bc5ba155}{credit\+\_\+card}} = user\+\_\+account.\+get\+\_\+card(1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceapi_ac8b72545960400e567cb234da5b1e592}\label{namespaceapi_ac8b72545960400e567cb234da5b1e592} 
+\index{api@{api}!account@{account}}
+\index{account@{account}!api@{api}}
+\doxysubsubsection{\texorpdfstring{account}{account}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} account = credit\+\_\+card\+\_\+manager.\+get\+\_\+account("{}user123"{})}
+
+\Hypertarget{namespaceapi_a3bc13ef433c58c7e808ef40088f32252}\label{namespaceapi_a3bc13ef433c58c7e808ef40088f32252} 
+\index{api@{api}!card@{card}}
+\index{card@{card}!api@{api}}
+\doxysubsubsection{\texorpdfstring{card}{card}}
+{\footnotesize\ttfamily card = \mbox{\hyperlink{classcredit__card_1_1credit__card_1_1_credit_card}{Credit\+Card}}("{}1234567890123456"{}, datetime(2025, 12, 31), "{}123"{})}
+
+\Hypertarget{namespaceapi_a6585bc3a1183332eba92b626bc5ba155}\label{namespaceapi_a6585bc3a1183332eba92b626bc5ba155} 
+\index{api@{api}!credit\_card@{credit\_card}}
+\index{credit\_card@{credit\_card}!api@{api}}
+\doxysubsubsection{\texorpdfstring{credit\_card}{credit\_card}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} credit\+\_\+card = user\+\_\+account.\+get\+\_\+card(1)}
+
+\Hypertarget{namespaceapi_adf8747aa592c12403dabf2d6bba615ad}\label{namespaceapi_adf8747aa592c12403dabf2d6bba615ad} 
+\index{api@{api}!credit\_card\_manager@{credit\_card\_manager}}
+\index{credit\_card\_manager@{credit\_card\_manager}!api@{api}}
+\doxysubsubsection{\texorpdfstring{credit\_card\_manager}{credit\_card\_manager}}
+{\footnotesize\ttfamily credit\+\_\+card\+\_\+manager = \mbox{\hyperlink{class_credit_card_manager_1_1_credit_card_manager}{Credit\+Card\+Manager}}()}
+
+\Hypertarget{namespaceapi_aa0823e1ff851f7526e7fc5487718a051}\label{namespaceapi_aa0823e1ff851f7526e7fc5487718a051} 
+\index{api@{api}!session@{session}}
+\index{session@{session}!api@{api}}
+\doxysubsubsection{\texorpdfstring{session}{session}}
+{\footnotesize\ttfamily session = credit\+\_\+card\+\_\+manager.\+get\+\_\+session(\mbox{\hyperlink{namespaceapi_a87da3d8264af1c9427605148f20dd9c4}{token}})}
+
+\Hypertarget{namespaceapi_a87da3d8264af1c9427605148f20dd9c4}\label{namespaceapi_a87da3d8264af1c9427605148f20dd9c4} 
+\index{api@{api}!token@{token}}
+\index{token@{token}!api@{api}}
+\doxysubsubsection{\texorpdfstring{token}{token}}
+{\footnotesize\ttfamily token = credit\+\_\+card\+\_\+manager.\+create\+\_\+session("{}user123"{})}
+
+\Hypertarget{namespaceapi_a9769c7cca0d4ba3e24516bd80e479b39}\label{namespaceapi_a9769c7cca0d4ba3e24516bd80e479b39} 
+\index{api@{api}!transaction@{transaction}}
+\index{transaction@{transaction}!api@{api}}
+\doxysubsubsection{\texorpdfstring{transaction}{transaction}}
+{\footnotesize\ttfamily transaction = \mbox{\hyperlink{classcredit__card_1_1transaction_1_1_transaction}{Transaction}}(user\+\_\+account.\+user\+\_\+id,100.\+0, datetime.\+now(), "{}Amazon"{})}
+
+\Hypertarget{namespaceapi_ae0567ec7a0dc442a19c05b7d24dfb151}\label{namespaceapi_ae0567ec7a0dc442a19c05b7d24dfb151} 
+\index{api@{api}!user\_account@{user\_account}}
+\index{user\_account@{user\_account}!api@{api}}
+\doxysubsubsection{\texorpdfstring{user\_account}{user\_account}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} user\+\_\+account = credit\+\_\+card\+\_\+manager.\+create\+\_\+account("{}user123"{})}
+
