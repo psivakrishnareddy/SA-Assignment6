@@ -1,7 +1,6 @@
 
-from ast import List, Tuple
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Tuple, List
 from credit_card.database import CreditCardDatabase, TransactionDatabase
 from credit_card.credit_card import CreditCard
 from credit_card.transaction import Transaction

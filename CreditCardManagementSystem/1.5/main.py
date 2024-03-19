@@ -55,7 +55,7 @@ else:
 # Retrieve account and credit card
 account: Account = credit_card_manager.get_account("user123")
 print("Retrieved Account:", account.user_id)
-credit_card = user_account.get_card(2)  # Assuming credit card ID is 2
+credit_card = user_account.get_card(1)  # Assuming credit card ID is 2
 print("Retrieved Credit Card:", credit_card)
 
 # Remove account and credit card
