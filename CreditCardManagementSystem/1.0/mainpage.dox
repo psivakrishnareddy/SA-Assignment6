@@ -1,0 +1,67 @@
+/**
+ * @mainpage Credit Card Management API (Version 1.0)
+ *
+ * @section intro_sec Introduction
+ *
+ * Welcome to the documentation for the Credit Card Management API version 1.0! This API provides a set of
+ * functionalities for managing credit cards, transactions, and accounts within a financial system. It offers
+ * developers the tools they need to build secure and efficient applications for handling credit card-related
+ * operations.
+ *
+ * @section features_sec Key Features
+ *
+ * - Credit Card Management: Create, retrieve, update, and delete credit card information.
+ * - Transaction Management: Record transactions, retrieve transaction history, and update transaction details.
+ * - Account Management: Manage user accounts, including adding and removing credit cards, and retrieving account information.
+ * - Authentication and Authorization: Authenticate users and authorize sessions for secure access to API endpoints.
+ *
+ * @section getting_started_sec Getting Started
+ *
+ * To get started with using the Credit Card Management API, follow these steps:
+ *
+ * 1. **Integration**: Integrate the API into your application by importing the necessary modules.
+ * 2. **Initialization**: Initialize the necessary objects, such as accounts and credit cards, to start managing financial data.
+ * 3. **Usage**: Utilize the API methods to perform operations such as adding transactions, updating balances, and managing credit card information.
+ * 4. **Security**: Ensure that proper authentication and authorization mechanisms are implemented to secure access to sensitive financial data.
+ *
+ * @section api_reference_sec API Reference
+ *
+ * For detailed information on the classes, methods, and parameters provided by the API, refer to the following documentation pages:
+ *
+ * - @ref account_page "Account Class"
+ * - @ref credit_card_page "CreditCard Class"
+ * - @ref transaction_page "Transaction Class"
+ * - @ref session_page "Session Class"
+ *
+ * @section sample_code_sec Sample Code
+ *
+ * Here's an example of how to use the API to initiate a payment transaction:
+ *
+ * ```cpp
+ * // Initialize CreditCardManager and create a new account
+ * CreditCardManager creditCardManager;
+ * Account account = creditCardManager.createAccount("user123");
+ *
+ * // Add a credit card to the account
+ * CreditCard card("1234567890123456", "12/25", "123");
+ * account.addCard(card);
+ *
+ * // Initiate a payment transaction
+ * bool paymentSuccessful = creditCardManager.initiatePayment(account, card, 100.0, "Online Store");
+ * if (paymentSuccessful) {
+ *     cout << "Payment successful!" << endl;
+ * } else {
+ *     cout << "Payment failed." << endl;
+ * }
+ * ```
+ *
+ * @section support_sec Support and Feedback
+ *
+ * If you have any questions, issues, or feedback regarding the Credit Card Management API, please feel free to
+ * [contact our support team](mailto:support@example.com). We are committed to providing assistance and improving
+ * the API based on user feedback.
+ *
+ * @section version_sec Version History
+ *
+ * - Version 1.0: Initial release of the Credit Card Management API.
+ */

@@ -1,0 +1,305 @@
+\doxysection{Account Class Reference}
+\hypertarget{classaccount_1_1account_1_1_account}{}\label{classaccount_1_1account_1_1_account}\index{Account@{Account}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_ae73bfa7a08b01dd6e738e52b30a5d4f7}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}{user\+\_\+id}})
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a7422b0630b86da77dfee3ee2f5fde12b}{add\+\_\+card}} (self, number, expiration\+\_\+date, cvv)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_af190badf783113c5df3771f3f4c5c2ce}{remove\+\_\+card}} (self, card\+\_\+id)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_af360804677e558185fe5464cef2f6aa4}{get\+\_\+card}} (self, card\+\_\+id)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a013683b6af30ab9736060fd801846338}{add\+\_\+transaction}} (self, amount, date, merchant)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a5dd24d759321c2f2caf76088cdb14b88}{remove\+\_\+transaction}} (self, transaction\+\_\+id)
+\item 
+List \mbox{\hyperlink{classaccount_1_1account_1_1_account_a6d702e6a60cb561f43efd3f723d25087}{get\+\_\+transactions}} (self)
+\item 
+float \mbox{\hyperlink{classaccount_1_1account_1_1_account_a15e703c32edb66179a4b3bfd9e5404ae}{get\+\_\+balance\+\_\+v2}} (self, start\+\_\+date=None, end\+\_\+date=None, transaction\+\_\+type=None, merchant=None)
+\item 
+None \mbox{\hyperlink{classaccount_1_1account_1_1_account_aab4b0aad0f752686906269deb4d47a33}{update\+\_\+balance}} (self, \mbox{\hyperlink{classcredit__card_1_1transaction_1_1_transaction}{Transaction}} transaction)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a50795b862d7bf6b25ea5d572bd5b766d}{enable\+\_\+two\+\_\+factor\+\_\+authentication}} (self)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_af985f8e722ac843dabb5e95d7579a10d}{disable\+\_\+two\+\_\+factor\+\_\+authentication}} (self)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a498d03c4d7528b5f8766d7b29a1a7934}{generate\+\_\+verification\+\_\+code}} (self)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_acf11eb3b7fbababbc5f74661784fa1b6}{validate\+\_\+verification\+\_\+code}} (self, \mbox{\hyperlink{classaccount_1_1account_1_1_account_a045039921c8db75783392b760c359d99}{verification\+\_\+code}})
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_af8d828362aca87a2268c74ab14134dc7}{enable\+\_\+two\+\_\+factor\+\_\+authentication}} (self, \mbox{\hyperlink{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}{user\+\_\+id}})
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_aa4d9dc863615847e219ffe3f8fff83a6}{disable\+\_\+two\+\_\+factor\+\_\+authentication}} (self, \mbox{\hyperlink{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}{user\+\_\+id}})
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a19591e53e86a7ac47f66dd09ca3b805b}{verify\+\_\+authentication\+\_\+code}} (self, \mbox{\hyperlink{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}{user\+\_\+id}}, \mbox{\hyperlink{classaccount_1_1account_1_1_account_a045039921c8db75783392b760c359d99}{verification\+\_\+code}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}{user\+\_\+id}}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a341af50ba2d42632aee62104d7e9e097}{credit\+\_\+card\+\_\+db}}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a66f945dd8427a308650de22ed6ec5d89}{transaction\+\_\+db}}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a6bd407008d0b6f619736d16f90dbbdc5}{two\+\_\+factor\+\_\+enabled}}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_a045039921c8db75783392b760c359d99}{verification\+\_\+code}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_afd329bc456f4c7da4fe7a374e3c3ff5c}{\+\_\+filter\+\_\+transactions}} (self, transactions, start\+\_\+date=None, end\+\_\+date=None, transaction\+\_\+type=None, merchant=None)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Manages a collection of CreditCard and Transaction objects for a user.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classaccount_1_1account_1_1_account_ae73bfa7a08b01dd6e738e52b30a5d4f7}\label{classaccount_1_1account_1_1_account_ae73bfa7a08b01dd6e738e52b30a5d4f7} 
+\index{Account@{Account}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{user\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classaccount_1_1account_1_1_account_afd329bc456f4c7da4fe7a374e3c3ff5c}\label{classaccount_1_1account_1_1_account_afd329bc456f4c7da4fe7a374e3c3ff5c} 
+\index{Account@{Account}!\_filter\_transactions@{\_filter\_transactions}}
+\index{\_filter\_transactions@{\_filter\_transactions}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{\_filter\_transactions()}{\_filter\_transactions()}}
+{\footnotesize\ttfamily \+\_\+filter\+\_\+transactions (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{transactions,  }\item[{}]{start\+\_\+date = {\ttfamily None},  }\item[{}]{end\+\_\+date = {\ttfamily None},  }\item[{}]{transaction\+\_\+type = {\ttfamily None},  }\item[{}]{merchant = {\ttfamily None} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Filters transactions based on specified criteria.
+
+Parameters:
+- transactions (list): List of transactions to filter.
+- start_date (datetime, optional): The start date of the date range filter.
+- end_date (datetime, optional): The end date of the date range filter.
+- transaction_type (str, optional): The type of transactions to include (e.g., 'purchase', 'refund').
+- merchant (str, optional): The merchant to include in the filter.
+
+Returns:
+- list: Filtered list of transactions.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a7422b0630b86da77dfee3ee2f5fde12b}\label{classaccount_1_1account_1_1_account_a7422b0630b86da77dfee3ee2f5fde12b} 
+\index{Account@{Account}!add\_card@{add\_card}}
+\index{add\_card@{add\_card}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{add\_card()}{add\_card()}}
+{\footnotesize\ttfamily add\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{number,  }\item[{}]{expiration\+\_\+date,  }\item[{}]{cvv }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a new credit card to the account.
+
+Parameters:
+- number (str): The credit card number.
+- expiration_date (str): The expiration date of the credit card.
+- cvv (str): The CVV code of the credit card.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a013683b6af30ab9736060fd801846338}\label{classaccount_1_1account_1_1_account_a013683b6af30ab9736060fd801846338} 
+\index{Account@{Account}!add\_transaction@{add\_transaction}}
+\index{add\_transaction@{add\_transaction}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{add\_transaction()}{add\_transaction()}}
+{\footnotesize\ttfamily add\+\_\+transaction (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{amount,  }\item[{}]{date,  }\item[{}]{merchant }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a new transaction to the account.
+
+Parameters:
+- user_id (Str): the id for the user
+- amount (float): The amount of the transaction.
+- date (str): The date of the transaction.
+- merchant (str): The merchant associated with the transaction.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_af985f8e722ac843dabb5e95d7579a10d}\label{classaccount_1_1account_1_1_account_af985f8e722ac843dabb5e95d7579a10d} 
+\index{Account@{Account}!disable\_two\_factor\_authentication@{disable\_two\_factor\_authentication}}
+\index{disable\_two\_factor\_authentication@{disable\_two\_factor\_authentication}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{disable\_two\_factor\_authentication()}{disable\_two\_factor\_authentication()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily disable\+\_\+two\+\_\+factor\+\_\+authentication (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disables two-factor authentication for the account.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_aa4d9dc863615847e219ffe3f8fff83a6}\label{classaccount_1_1account_1_1_account_aa4d9dc863615847e219ffe3f8fff83a6} 
+\index{Account@{Account}!disable\_two\_factor\_authentication@{disable\_two\_factor\_authentication}}
+\index{disable\_two\_factor\_authentication@{disable\_two\_factor\_authentication}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{disable\_two\_factor\_authentication()}{disable\_two\_factor\_authentication()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily disable\+\_\+two\+\_\+factor\+\_\+authentication (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{user\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disables two-factor authentication for the specified user account.
+
+Parameters:
+- user_id (str): The ID of the user account.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a50795b862d7bf6b25ea5d572bd5b766d}\label{classaccount_1_1account_1_1_account_a50795b862d7bf6b25ea5d572bd5b766d} 
+\index{Account@{Account}!enable\_two\_factor\_authentication@{enable\_two\_factor\_authentication}}
+\index{enable\_two\_factor\_authentication@{enable\_two\_factor\_authentication}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{enable\_two\_factor\_authentication()}{enable\_two\_factor\_authentication()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enable\+\_\+two\+\_\+factor\+\_\+authentication (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Enables two-factor authentication for the account.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_af8d828362aca87a2268c74ab14134dc7}\label{classaccount_1_1account_1_1_account_af8d828362aca87a2268c74ab14134dc7} 
+\index{Account@{Account}!enable\_two\_factor\_authentication@{enable\_two\_factor\_authentication}}
+\index{enable\_two\_factor\_authentication@{enable\_two\_factor\_authentication}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{enable\_two\_factor\_authentication()}{enable\_two\_factor\_authentication()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enable\+\_\+two\+\_\+factor\+\_\+authentication (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{user\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Enables two-factor authentication for the specified user account.
+
+Parameters:
+- user_id (str): The ID of the user account.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a498d03c4d7528b5f8766d7b29a1a7934}\label{classaccount_1_1account_1_1_account_a498d03c4d7528b5f8766d7b29a1a7934} 
+\index{Account@{Account}!generate\_verification\_code@{generate\_verification\_code}}
+\index{generate\_verification\_code@{generate\_verification\_code}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{generate\_verification\_code()}{generate\_verification\_code()}}
+{\footnotesize\ttfamily generate\+\_\+verification\+\_\+code (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generates a random verification code for two-factor authentication.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a15e703c32edb66179a4b3bfd9e5404ae}\label{classaccount_1_1account_1_1_account_a15e703c32edb66179a4b3bfd9e5404ae} 
+\index{Account@{Account}!get\_balance\_v2@{get\_balance\_v2}}
+\index{get\_balance\_v2@{get\_balance\_v2}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_balance\_v2()}{get\_balance\_v2()}}
+{\footnotesize\ttfamily  float get\+\_\+balance\+\_\+v2 (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{start\+\_\+date = {\ttfamily None},  }\item[{}]{end\+\_\+date = {\ttfamily None},  }\item[{}]{transaction\+\_\+type = {\ttfamily None},  }\item[{}]{merchant = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the current account balance based on specified criteria for filtering transactions.
+
+Parameters:
+- start_date (datetime, optional): The start date of the date range filter.
+- end_date (datetime, optional): The end date of the date range filter.
+- transaction_type (str, optional): The type of transactions to include (e.g., 'purchase', 'refund').
+- merchant (str, optional): The merchant to include in the balance calculation.
+
+Returns:
+- float: The current account balance based on the specified criteria.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_af360804677e558185fe5464cef2f6aa4}\label{classaccount_1_1account_1_1_account_af360804677e558185fe5464cef2f6aa4} 
+\index{Account@{Account}!get\_card@{get\_card}}
+\index{get\_card@{get\_card}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_card()}{get\_card()}}
+{\footnotesize\ttfamily get\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{card\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves a credit card by its ID.
+
+Parameters:
+- card_id (int): The ID of the credit card to retrieve.
+
+Returns:
+- CreditCard: The retrieved CreditCard object if found, else None.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a6d702e6a60cb561f43efd3f723d25087}\label{classaccount_1_1account_1_1_account_a6d702e6a60cb561f43efd3f723d25087} 
+\index{Account@{Account}!get\_transactions@{get\_transactions}}
+\index{get\_transactions@{get\_transactions}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_transactions()}{get\_transactions()}}
+{\footnotesize\ttfamily  List get\+\_\+transactions (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves all transactions associated with the account.
+
+Returns:
+- List[Transaction]: A list of Transaction objects representing the transactions.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_af190badf783113c5df3771f3f4c5c2ce}\label{classaccount_1_1account_1_1_account_af190badf783113c5df3771f3f4c5c2ce} 
+\index{Account@{Account}!remove\_card@{remove\_card}}
+\index{remove\_card@{remove\_card}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{remove\_card()}{remove\_card()}}
+{\footnotesize\ttfamily remove\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{card\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Removes a credit card from the account.
+
+Parameters:
+- card_id (int): The ID of the credit card to remove.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a5dd24d759321c2f2caf76088cdb14b88}\label{classaccount_1_1account_1_1_account_a5dd24d759321c2f2caf76088cdb14b88} 
+\index{Account@{Account}!remove\_transaction@{remove\_transaction}}
+\index{remove\_transaction@{remove\_transaction}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{remove\_transaction()}{remove\_transaction()}}
+{\footnotesize\ttfamily remove\+\_\+transaction (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{transaction\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Removes a transaction from the account.
+
+Parameters:
+- transaction_id (int): The ID of the transaction to remove.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_aab4b0aad0f752686906269deb4d47a33}\label{classaccount_1_1account_1_1_account_aab4b0aad0f752686906269deb4d47a33} 
+\index{Account@{Account}!update\_balance@{update\_balance}}
+\index{update\_balance@{update\_balance}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{update\_balance()}{update\_balance()}}
+{\footnotesize\ttfamily  None update\+\_\+balance (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classcredit__card_1_1transaction_1_1_transaction}{Transaction}}}]{transaction }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Updates the balance based on a transaction amount.
+
+Parameters:
+    transaction (Transaction): The transaction object to update the balance.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_acf11eb3b7fbababbc5f74661784fa1b6}\label{classaccount_1_1account_1_1_account_acf11eb3b7fbababbc5f74661784fa1b6} 
+\index{Account@{Account}!validate\_verification\_code@{validate\_verification\_code}}
+\index{validate\_verification\_code@{validate\_verification\_code}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{validate\_verification\_code()}{validate\_verification\_code()}}
+{\footnotesize\ttfamily validate\+\_\+verification\+\_\+code (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{verification\+\_\+code }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Validates the provided verification code for two-factor authentication.
+
+Parameters:
+- verification_code (str): The verification code provided by the user.
+
+Returns:
+- bool: True if the verification code is valid, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a19591e53e86a7ac47f66dd09ca3b805b}\label{classaccount_1_1account_1_1_account_a19591e53e86a7ac47f66dd09ca3b805b} 
+\index{Account@{Account}!verify\_authentication\_code@{verify\_authentication\_code}}
+\index{verify\_authentication\_code@{verify\_authentication\_code}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{verify\_authentication\_code()}{verify\_authentication\_code()}}
+{\footnotesize\ttfamily verify\+\_\+authentication\+\_\+code (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{user\+\_\+id,  }\item[{}]{verification\+\_\+code }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Verifies the provided verification code for two-factor authentication.
+
+Parameters:
+- user_id (str): The ID of the user account.
+- verification_code (str): The verification code provided by the user.
+
+Returns:
+- bool: True if the verification code is valid, False otherwise.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classaccount_1_1account_1_1_account_a341af50ba2d42632aee62104d7e9e097}\label{classaccount_1_1account_1_1_account_a341af50ba2d42632aee62104d7e9e097} 
+\index{Account@{Account}!credit\_card\_db@{credit\_card\_db}}
+\index{credit\_card\_db@{credit\_card\_db}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{credit\_card\_db}{credit\_card\_db}}
+{\footnotesize\ttfamily credit\+\_\+card\+\_\+db}
+
+\Hypertarget{classaccount_1_1account_1_1_account_a66f945dd8427a308650de22ed6ec5d89}\label{classaccount_1_1account_1_1_account_a66f945dd8427a308650de22ed6ec5d89} 
+\index{Account@{Account}!transaction\_db@{transaction\_db}}
+\index{transaction\_db@{transaction\_db}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{transaction\_db}{transaction\_db}}
+{\footnotesize\ttfamily transaction\+\_\+db}
+
+\Hypertarget{classaccount_1_1account_1_1_account_a6bd407008d0b6f619736d16f90dbbdc5}\label{classaccount_1_1account_1_1_account_a6bd407008d0b6f619736d16f90dbbdc5} 
+\index{Account@{Account}!two\_factor\_enabled@{two\_factor\_enabled}}
+\index{two\_factor\_enabled@{two\_factor\_enabled}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{two\_factor\_enabled}{two\_factor\_enabled}}
+{\footnotesize\ttfamily two\+\_\+factor\+\_\+enabled}
+
+\Hypertarget{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}\label{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8} 
+\index{Account@{Account}!user\_id@{user\_id}}
+\index{user\_id@{user\_id}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{user\_id}{user\_id}}
+{\footnotesize\ttfamily user\+\_\+id}
+
+\Hypertarget{classaccount_1_1account_1_1_account_a045039921c8db75783392b760c359d99}\label{classaccount_1_1account_1_1_account_a045039921c8db75783392b760c359d99} 
+\index{Account@{Account}!verification\_code@{verification\_code}}
+\index{verification\_code@{verification\_code}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{verification\_code}{verification\_code}}
+{\footnotesize\ttfamily verification\+\_\+code}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+account/\mbox{\hyperlink{account_8py}{account.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+\chapter{Credit Card Management API (Version 2.0)}
+\hypertarget{index}{}\label{index}\index{Credit Card Management API (Version 2.0)@{Credit Card Management API (Version 2.0)}}
+\hypertarget{index_intro_sec}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{index_intro_sec}
+Welcome to the documentation for the Credit Card Management API version 2.\+0! This version brings several enhancements to functionality and security, ensuring a more streamlined and secure experience for developers building financial applications.\hypertarget{index_changes_sec}{}\doxysection{\texorpdfstring{Changes from Version 1.\+0}{Changes from Version 1.\+0}}\label{index_changes_sec}
+
+\begin{DoxyItemize}
+\item Removed Authentication Methods\+: The methods for authenticating users and managing sessions have been removed from the \doxylink{namespace_credit_card_manager}{Credit\+Card\+Manager} class. This includes methods such as authenticate\+\_\+user, authorize\+\_\+session, is\+\_\+authorized, \+\_\+hash\+\_\+password, and \+\_\+verify\+\_\+password. Authentication and session management are typically handled separately from the credit card management functionality, so these methods were removed to streamline the API and focus on its primary purpose.
+\end{DoxyItemize}\hypertarget{index_reasons_sec}{}\doxysection{\texorpdfstring{Reasons for Removal}{Reasons for Removal}}\label{index_reasons_sec}
+
+\begin{DoxyItemize}
+\item Separation of Concerns\+: Authentication and session management are separate concerns from credit card and transaction management. By removing these features from the \doxylink{namespace_credit_card_manager}{Credit\+Card\+Manager} class, the API becomes more focused and adheres to the principle of separation of concerns, making it easier to maintain and understand.
+\item Security Considerations\+: Handling authentication and password hashing within the credit card management module could introduce security risks if not implemented correctly. By removing these features, the API avoids potential security vulnerabilities and ensures that authentication is handled by dedicated authentication modules that are designed and maintained with security best practices in mind.
+\item Simplicity and Clarity\+: Removing authentication-\/related features simplifies the API interface, making it clearer and easier to use for developers who only need credit card and transaction management functionality. It reduces unnecessary complexity and avoids confusion about the responsibilities of the \doxylink{namespace_credit_card_manager}{Credit\+Card\+Manager} class.
+\end{DoxyItemize}\hypertarget{index_remarks_sec}{}\doxysection{\texorpdfstring{Remarks}{Remarks}}\label{index_remarks_sec}
+The removal of authentication-\/related features from the \doxylink{namespace_credit_card_manager}{Credit\+Card\+Manager} class does not affect the core functionality of managing credit cards, transactions, and accounts. Developers can integrate authentication and session management separately into their applications using dedicated authentication libraries or frameworks, ensuring a more modular and secure design.
+
+Additionally, the API continues to provide comprehensive methods for managing credit cards (Credit\+Card class), transactions (Transaction class), accounts (Account class), and sessions (Session class), enabling developers to build robust and secure financial applications with ease.\hypertarget{index_getting_started_sec}{}\doxysection{\texorpdfstring{Getting Started}{Getting Started}}\label{index_getting_started_sec}
+To get started with using the Credit Card Management API, refer to the documentation pages for detailed information on classes, methods, and parameters.\hypertarget{index_api_reference_sec}{}\doxysection{\texorpdfstring{API Reference}{API Reference}}\label{index_api_reference_sec}
+For detailed information on the classes, methods, and parameters provided by the API, refer to the following documentation pages\+:
+
+
+\begin{DoxyItemize}
+\item Account Class
+\item Credit\+Card Class
+\item Transaction Class
+\item Session Class
+\end{DoxyItemize}\hypertarget{index_version_sec}{}\doxysection{\texorpdfstring{Version History}{Version History}}\label{index_version_sec}
+
+\begin{DoxyItemize}
+\item Version 2.\+0\+: Enhanced functionality and security with the removal of authentication-\/related features from the \doxylink{namespace_credit_card_manager}{Credit\+Card\+Manager} class. 
+\end{DoxyItemize}

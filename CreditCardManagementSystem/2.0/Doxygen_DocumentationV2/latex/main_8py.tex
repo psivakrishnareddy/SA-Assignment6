@@ -1,0 +1,28 @@
+\doxysection{main.\+py File Reference}
+\hypertarget{main_8py}{}\label{main_8py}\index{main.py@{main.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacemain}{main}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemain_adf8747aa592c12403dabf2d6bba615ad}{credit\+\_\+card\+\_\+manager}} = \mbox{\hyperlink{class_credit_card_manager_1_1_credit_card_manager}{Credit\+Card\+Manager}}()
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} \mbox{\hyperlink{namespacemain_ae0567ec7a0dc442a19c05b7d24dfb151}{user\+\_\+account}} = credit\+\_\+card\+\_\+manager.\+create\+\_\+account("{}user123"{})
+\item 
+\mbox{\hyperlink{namespacemain_a87da3d8264af1c9427605148f20dd9c4}{token}} = credit\+\_\+card\+\_\+manager.\+create\+\_\+session("{}user123"{})
+\item 
+\mbox{\hyperlink{namespacemain_a3bc13ef433c58c7e808ef40088f32252}{card}} = \mbox{\hyperlink{classcredit__card_1_1credit__card_1_1_credit_card}{Credit\+Card}}("{}1234567890123456"{}, datetime(2025, 12, 31), "{}123"{})
+\item 
+\mbox{\hyperlink{namespacemain_a9769c7cca0d4ba3e24516bd80e479b39}{transaction}} = \mbox{\hyperlink{classcredit__card_1_1transaction_1_1_transaction}{Transaction}}(user\+\_\+account.\+user\+\_\+id,100.\+0, datetime.\+now(), "{}Amazon"{})
+\item 
+\mbox{\hyperlink{namespacemain_aa0823e1ff851f7526e7fc5487718a051}{session}} = credit\+\_\+card\+\_\+manager.\+get\+\_\+session(\mbox{\hyperlink{namespacemain_a87da3d8264af1c9427605148f20dd9c4}{token}})
+\item 
+\mbox{\hyperlink{namespacemain_a67c09f359feb8d9f31ef31de135d2a45}{payment\+\_\+successful}}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} \mbox{\hyperlink{namespacemain_ac8b72545960400e567cb234da5b1e592}{account}} = credit\+\_\+card\+\_\+manager.\+get\+\_\+account("{}user123"{})
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account}{Account}} \mbox{\hyperlink{namespacemain_a6585bc3a1183332eba92b626bc5ba155}{credit\+\_\+card}} = user\+\_\+account.\+get\+\_\+card(2)
+\end{DoxyCompactItemize}
