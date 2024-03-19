@@ -1,17 +1,26 @@
+
 /**
  * @mainpage Credit Card Management API (Version 1.5)
  *
  * @section intro_sec Introduction
  *
- * Welcome to the documentation for the Credit Card Management API version 1.5! This version introduces significant enhancements
- * and improvements to the functionality provided in the previous version, offering developers more robust tools for
- * managing credit card-related operations in their applications.
+ * Welcome to the documentation for the Credit Card Management API version 1.5! This API provides a set of
+ * functionalities for managing credit cards, transactions, and accounts within a financial system. It offers
+ * developers the tools they need to build secure and efficient applications for handling credit card-related
+ * operations.
+ *
+ * @section features_sec Key Features
+ *
+ * - Credit Card Management: Create, retrieve, update, and delete credit card information.
+ * - Transaction Management: Record transactions, retrieve transaction history, and update transaction details.
+ * - Account Management: Manage user accounts, including adding and removing credit cards, and retrieving account information.
+ * - Authentication and Authorization: Authenticate users and authorize sessions for secure access to API endpoints.
+ * - Balance Tracking: Introduces functionality to track the current account balance based on transactions.
  *
  * @section changes_sec Changes in Version 1.5
  *
  * @subsection enhancements_subsec Enhancements
  *
- * - Introduced Versioning in Deprecation: Deprecated the get_balance method using the @deprecated decorator from the typing_extensions module, specifying version 1.0 and providing a reason. This allows users to identify deprecated methods easily and migrate to newer versions.
  * - Added Enhanced Balance Retrieval Method: Introduced get_balance_v2 method to replace the deprecated get_balance method. This new method provides enhanced functionality for retrieving the account balance based on specified criteria such as date range, transaction type, and merchant. It offers more flexibility and control over balance calculation.
  * - Improved Transaction Filtering: Refactored the _filter_transactions method to handle filtering based on various criteria such as start and end dates, transaction type, and merchant. This enhances the flexibility and usability of transaction filtering, allowing users to extract specific subsets of transactions as needed.
  * - Updated Payment Initiation Process: Enhanced the initiate_payment method in the CreditCardManager class to simulate a payment process by updating the account balance based on the transaction amount. This provides a more realistic scenario for handling payment transactions within the system.
@@ -20,18 +29,23 @@
  *
  * - Deprecation of get_balance Method: Deprecated the get_balance method in the Account class using the @deprecated decorator. This method is replaced by the get_balance_v2 method, which offers an upgraded version with enhanced functionality.
  *
- * @section remarks_sec Remarks
+ * @subsection security_enhancements Security Enhancements
  *
- * Version 1.5 introduces several enhancements to improve the functionality and usability of the credit card management system. By deprecating outdated methods and introducing new features like enhanced balance retrieval and improved transaction filtering, the API becomes more robust and user-friendly. Users are encouraged to migrate to the newer version to take advantage of these enhancements and ensure compatibility with future updates.
+ * - **Token-Based Session Management**: Implemented token-based session management using randomly generated tokens and session expiration times to mitigate the risk of unauthorized access to API endpoints.
+ * - **Password Hashing**: Enhanced user authentication by securely hashing passwords using the SHA-256 algorithm, protecting user credentials against breaches and unauthorized access.
  *
+ * @subsection authentication_improvements Authentication Improvements
+ *
+ * - **User Authentication Method**: Added the `authenticate_user()` method to the `CreditCardManager` class for secure user authentication based on user ID and password, enhancing the security of login processes.
+ * - **Session Authorization**: Strengthened session authorization mechanisms within the `Session` class, enabling developers to verify the authenticity of user sessions and prevent unauthorized access to API endpoints.
  * @section getting_started_sec Getting Started
  *
- * To start using the Credit Card Management API version 1.5, follow these steps:
+ * To get started with using the Credit Card Management API, follow these steps:
  *
- * 1. **Integration**: Integrate the updated API into your application, ensuring compatibility with version 1.5.
- * 2. **Migration**: If upgrading from a previous version, review the migration guide for any necessary updates to your existing code.
- * 3. **Enhanced Functionality**: Take advantage of the new features and improvements provided by version 1.5, such as enhanced credit card management and improved transaction filtering.
- * 4. **Feedback**: Provide feedback on your experience with the new version, including any issues encountered or suggestions for further improvements.
+ * 1. **Integration**: Integrate the API into your application by importing the necessary modules.
+ * 2. **Initialization**: Initialize the necessary objects, such as accounts and credit cards, to start managing financial data.
+ * 3. **Usage**: Utilize the API methods to perform operations such as adding transactions, updating balances, and managing credit card information.
+ * 4. **Security**: Ensure that proper authentication and authorization mechanisms are implemented to secure access to sensitive financial data.
  *
  * @section api_reference_sec API Reference
  *
@@ -42,31 +56,74 @@
  * - @ref transaction_page "Transaction Class"
  * - @ref session_page "Session Class"
  *
+ * @section getting_started Getting Started with API Usage (Python)
+ * To start using the CreditCardManagementSystem API in your Python project, follow these steps:
+ * 
+ * - **Step 1:** Install the package using pip:
+ *   ```bash
+ *   pip install CreditCardManagementSystem
+ *   ```
+ * 
+ * - **Step 2:** Import the necessary modules in your Python script:
+ *   ```python
+ *   from CreditCardManager import CreditCardManager
+ *   from credit_card.credit_card import CreditCard
+ *   from credit_card.transaction import Transaction
+ *   from account.account import Account
+ *   ```
+ * 
+ * - **Step 3:** Start utilizing the API functionalities as demonstrated in the sample code provided below.
+ *
  * @section sample_code_sec Sample Code
  *
- * Here's an example of how to use the API to initiate a payment using the enhanced payment initiation process:
+ * Here's an example of how to use the API to initiate a payment transaction:
  *
  * ```python
- * # Initialize CreditCardManager and retrieve an account
+ * # Initialize CreditCardManager and create a new account
  * credit_card_manager = CreditCardManager()
- * account = credit_card_manager.get_account("user123")
+ * user_account = credit_card_manager.create_account("user123")
  *
- * # Initiate payment using the enhanced process
+ * # Add a credit card to the account
+ * card = CreditCard("1234567890123456", datetime(2025, 12, 31), "123")
+ * user_account.add_card(card.number, card.expiration_date, card.cvv)
+ *
+ * # Initiate a payment using a saved card
  * payment_successful = credit_card_manager.initiate_payment(
- *     account.user_id, card_number, amount, "Online Store")
+ *     user_account.user_id, card.number, 50.00, "Online Store")
  *
  * if payment_successful:
- *   print("Payment successful!")
- *   # Update account balance based on the transaction
- *   user_account.update_balance(Transaction(account.user_id, amount, datetime.now(), "Online Store", True))
- *   print(f"Current account balance: ${user_account.get_balance_v2():.2f}")
+ *     print("Payment successful!")
+ *     # Update account balance based on the transaction
+ *     user_account.update_balance(Transaction(user_account.user_id, 50.00, datetime.now(), "Online Store", True))
+ *     print(f"Current account balance: ${user_account.get_balance():.2f}")
+ *     print(f"Current account balance: ${user_account.get_balance_v2():.2f}")
  * else:
- *   print("Payment failed!")
+ *     print("Payment failed!")    
  * ```
  *
+ * @section details Details
+ * - Functionality: Provides functionalities for managing accounts, credit cards, transactions, sessions, and balance tracking.
+ * - Endpoints: Includes operations such as creating, retrieving, and removing accounts, adding and removing credit cards, managing transactions, and handling user sessions.
+ * - Sample Code Usage Explanation: Demonstrates how to interact with the API, including creating accounts, adding credit cards, managing transactions, and handling user sessions.
+ * - API Usage Guidelines: Offers guidelines for utilizing the API effectively, ensuring proper authentication, transaction management, and balance tracking.
+ * - Error Handling: Basic error handling mechanisms are included to manage invalid requests or unauthorized access.
+ * - Security: Introduces basic security measures such as session token generation and validation.
+ * - Usability: Emphasizes simplicity and ease of use, catering to developers who need to integrate credit card management functionalities into their applications.
+ *
+ * @section support_sec Support and Feedback
+ *
+ * If you have any questions, issues, or feedback regarding the Credit Card Management API, please feel free to
+ * [contact our Siva & Karuna team](mailto:sivakaruna@example.com). We are committed to providing assistance and improving
+ * the API based on user feedback.
+ *
+ * @section remarks Remarks
+ * - Version 1.5 introduces balance tracking functionality, allowing users to track their account balances based on transactions.
+ * - Deprecated code has been flagged and replaced with updated methods for improved functionality and usability.
+ * - Future versions will continue to build upon these features and enhancements to meet evolving user needs and industry standards.
  *
  * @section version_sec Version History
  *
- * - Version 1.5: Enhanced credit card management, improved transaction filtering, and deprecated outdated features for better usability and functionality.
  * - Version 1.0: Initial release of the Credit Card Management API.
+ * - Version 1.5: Introduces balance tracking functionality, deprecated methods, and updates to existing functionalities.
  */
+

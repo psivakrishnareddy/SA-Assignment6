@@ -1,9 +1,13 @@
 
-from ast import List
+from ast import List, Tuple
+from datetime import datetime
+from typing import Optional
 from credit_card.database import CreditCardDatabase, TransactionDatabase
+from credit_card.credit_card import CreditCard
 from credit_card.transaction import Transaction
 from typing_extensions import deprecated
 import warnings
+
 
 class Account:
     """
@@ -35,7 +39,7 @@ class Account:
         """
         self.credit_card_db.delete_credit_card(card_id)
 
-    def get_card(self, card_id):
+    def get_card(self, card_id) -> Optional[CreditCard]:
         """
         Retrieves a credit card by its ID.
 
@@ -82,7 +86,7 @@ class Account:
         """
         Returns the current account balance.
 
-        This method is DEPRECATED in Version 1.0. Use get_balance_v2() instead.
+        [Warning]: This method is DEPRECATED in Version 1.0. Use get_balance_v2() instead.
 
         Returns:
             The current balance (float).
@@ -109,7 +113,8 @@ class Account:
         balance = sum(transaction[2] for transaction in filtered_transactions)  # Assuming amount is stored in the third column
         return balance
 
-    def _filter_transactions(self, transactions, start_date=None, end_date=None, transaction_type=None, merchant=None):
+    def _filter_transactions(self, transactions: List[Tuple], start_date: Optional[datetime] = None, end_date: Optional[datetime] = None, 
+                             transaction_type: Optional[str] = None, merchant: Optional[str] = None) -> List[Tuple]:
         """
         Filters transactions based on specified criteria.
 

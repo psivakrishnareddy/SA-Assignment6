@@ -134,7 +134,7 @@ class CreditCardManager:
 
         return False        
             
-    def authenticate_user(self, user_id, password):
+    def authenticate_user(self, user_id, password) -> bool:
         """
         Authenticates the user with the given user ID and password.
 
@@ -152,7 +152,7 @@ class CreditCardManager:
                 return True
         return False
 
-    def _hash_password(self, password):
+    def _hash_password(self, password) -> str:
         """
         Hashes the provided password using SHA-256.
 
@@ -164,7 +164,7 @@ class CreditCardManager:
         """
         return sha256(password.encode()).hexdigest()
 
-    def _verify_password(self, password, hashed_password):
+    def _verify_password(self, password, hashed_password) -> bool:
         """
         Verifies the provided password against the hashed password.
 

@@ -27,7 +27,7 @@ class Session:
         """
         return datetime.now() < self.expiration_time
     
-    def authorize_session(self, user_id):
+    def authorize_session(self, user_id) -> str:
         """
         Generates and returns a session token for the authenticated user.
 
@@ -41,7 +41,7 @@ class Session:
         self.sessions[user_id] = session_token
         return session_token
 
-    def is_authorized(self, user_id, session_token):
+    def is_authorized(self, user_id, session_token) -> bool:
         """
         Checks if the user with the given user ID has an active session with the provided session token.
 
