@@ -1,0 +1,146 @@
+\doxysection{Account Class Reference}
+\hypertarget{classaccount_1_1account_1_1_account}{}\label{classaccount_1_1account_1_1_account}\index{Account@{Account}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_ad986006474d18600534407305ab133e7}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str \mbox{\hyperlink{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}{user\+\_\+id}})
+\item 
+None \mbox{\hyperlink{classaccount_1_1account_1_1_account_abdaf9655c08e963ff201c9dabdfdc8a8}{add\+\_\+card}} (self, str number, str expiration\+\_\+date, str cvv)
+\item 
+None \mbox{\hyperlink{classaccount_1_1account_1_1_account_a68394a3ce22d76d99f737be10848f4b3}{remove\+\_\+card}} (self, int card\+\_\+id)
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_ad661c1aa4bbf21fc42fde204731f24f1}{get\+\_\+card}} (self, int card\+\_\+id)
+\item 
+None \mbox{\hyperlink{classaccount_1_1account_1_1_account_afefad7b538ba85f16e08bb4c59322018}{add\+\_\+transaction}} (self, float amount, str date, str merchant)
+\item 
+None \mbox{\hyperlink{classaccount_1_1account_1_1_account_af40d8c9d17894fcea878421fe603f657}{remove\+\_\+transaction}} (self, int transaction\+\_\+id)
+\item 
+List\mbox{[}\mbox{\hyperlink{classcredit__card_1_1transaction_1_1_transaction}{Transaction}}\mbox{]} \mbox{\hyperlink{classaccount_1_1account_1_1_account_a00c14b9b631b7858557ecdefe010c56c}{get\+\_\+transactions}} (self)
+\item 
+float \mbox{\hyperlink{classaccount_1_1account_1_1_account_aeb26172e3a449cc5f3a4c89affb3568f}{get\+\_\+balance}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}{user\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Manages a collection of CreditCard and Transaction objects for a user.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classaccount_1_1account_1_1_account_ad986006474d18600534407305ab133e7}\label{classaccount_1_1account_1_1_account_ad986006474d18600534407305ab133e7} 
+\index{Account@{Account}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{user\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes an Account object.
+
+Parameters:
+- user_id (str): The ID of the user.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classaccount_1_1account_1_1_account_abdaf9655c08e963ff201c9dabdfdc8a8}\label{classaccount_1_1account_1_1_account_abdaf9655c08e963ff201c9dabdfdc8a8} 
+\index{Account@{Account}!add\_card@{add\_card}}
+\index{add\_card@{add\_card}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{add\_card()}{add\_card()}}
+{\footnotesize\ttfamily  None add\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{number,  }\item[{str}]{expiration\+\_\+date,  }\item[{str}]{cvv }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a new credit card to the account.
+
+Parameters:
+- number (str): The credit card number.
+- expiration_date (str): The expiration date of the credit card.
+- cvv (str): The CVV code of the credit card.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_afefad7b538ba85f16e08bb4c59322018}\label{classaccount_1_1account_1_1_account_afefad7b538ba85f16e08bb4c59322018} 
+\index{Account@{Account}!add\_transaction@{add\_transaction}}
+\index{add\_transaction@{add\_transaction}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{add\_transaction()}{add\_transaction()}}
+{\footnotesize\ttfamily  None add\+\_\+transaction (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float}]{amount,  }\item[{str}]{date,  }\item[{str}]{merchant }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a new transaction to the account.
+
+Parameters:
+- amount (float): The amount of the transaction.
+- date (str): The date of the transaction.
+- merchant (str): The merchant associated with the transaction.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_aeb26172e3a449cc5f3a4c89affb3568f}\label{classaccount_1_1account_1_1_account_aeb26172e3a449cc5f3a4c89affb3568f} 
+\index{Account@{Account}!get\_balance@{get\_balance}}
+\index{get\_balance@{get\_balance}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_balance()}{get\_balance()}}
+{\footnotesize\ttfamily  float get\+\_\+balance (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the current account balance.
+
+Returns:
+    The current balance (float).
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_ad661c1aa4bbf21fc42fde204731f24f1}\label{classaccount_1_1account_1_1_account_ad661c1aa4bbf21fc42fde204731f24f1} 
+\index{Account@{Account}!get\_card@{get\_card}}
+\index{get\_card@{get\_card}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_card()}{get\_card()}}
+{\footnotesize\ttfamily get\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{card\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves a credit card by its ID.
+
+Parameters:
+- card_id (int): The ID of the credit card to retrieve.
+
+Returns:
+- CreditCard: The retrieved CreditCard object if found, else None.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a00c14b9b631b7858557ecdefe010c56c}\label{classaccount_1_1account_1_1_account_a00c14b9b631b7858557ecdefe010c56c} 
+\index{Account@{Account}!get\_transactions@{get\_transactions}}
+\index{get\_transactions@{get\_transactions}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_transactions()}{get\_transactions()}}
+{\footnotesize\ttfamily  List\mbox{[}\mbox{\hyperlink{classcredit__card_1_1transaction_1_1_transaction}{Transaction}}\mbox{]} get\+\_\+transactions (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves all transactions associated with the account.
+
+Returns:
+- List[Transaction]: A list of Transaction objects representing the transactions.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_a68394a3ce22d76d99f737be10848f4b3}\label{classaccount_1_1account_1_1_account_a68394a3ce22d76d99f737be10848f4b3} 
+\index{Account@{Account}!remove\_card@{remove\_card}}
+\index{remove\_card@{remove\_card}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{remove\_card()}{remove\_card()}}
+{\footnotesize\ttfamily  None remove\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{card\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Removes a credit card from the account.
+
+Parameters:
+- card_id (int): The ID of the credit card to remove.
+\end{DoxyVerb}
+ \Hypertarget{classaccount_1_1account_1_1_account_af40d8c9d17894fcea878421fe603f657}\label{classaccount_1_1account_1_1_account_af40d8c9d17894fcea878421fe603f657} 
+\index{Account@{Account}!remove\_transaction@{remove\_transaction}}
+\index{remove\_transaction@{remove\_transaction}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{remove\_transaction()}{remove\_transaction()}}
+{\footnotesize\ttfamily  None remove\+\_\+transaction (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{transaction\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Removes a transaction from the account.
+
+Parameters:
+- transaction_id (int): The ID of the transaction to remove.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8}\label{classaccount_1_1account_1_1_account_ab8e4fe22776aeac6701c6c43fdee5ac8} 
+\index{Account@{Account}!user\_id@{user\_id}}
+\index{user\_id@{user\_id}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{user\_id}{user\_id}}
+{\footnotesize\ttfamily user\+\_\+id}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+account/\mbox{\hyperlink{account_8py}{account.\+py}}\end{DoxyCompactItemize}
