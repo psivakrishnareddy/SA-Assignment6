@@ -3,31 +3,42 @@
  *
  * @section intro_sec Introduction
  *
- * Welcome to the documentation for the Credit Card Management API version 2.0! This version brings several enhancements
- * to functionality and security, ensuring a more streamlined and secure experience for developers building financial
- * applications.
+ * Welcome to the documentation for the Credit Card Management API version 2.0! This API provides a set of
+ * functionalities for managing credit cards, transactions, and accounts within a financial system. It offers
+ * developers the tools they need to build secure and efficient applications for handling credit card-related
+ * operations.
  *
- * @section changes_sec Changes from Version 1.0
+ * @section features_sec Key Features
  *
- * - Removed Authentication Methods: The methods for authenticating users and managing sessions have been removed from the CreditCardManager class. This includes methods such as authenticate_user, authorize_session, is_authorized, _hash_password, and _verify_password. Authentication and session management are typically handled separately from the credit card management functionality, so these methods were removed to streamline the API and focus on its primary purpose.
+ * - Credit Card Management: Create, retrieve, update, and delete credit card information.
+ * - Transaction Management: Record transactions, retrieve transaction history, and update transaction details.
+ * - Account Management: Manage user accounts, including adding and removing credit cards, and retrieving account information.
+ * - Authentication and Authorization: Authenticate users and authorize sessions for secure access to API endpoints.
+ * - Balance Tracking: Introduces functionality to track the current account balance based on transactions.
  *
- * @section reasons_sec Reasons for Removal
+ * @section changes_sec Changes in Version 2.0
  *
- * - Separation of Concerns: Authentication and session management are separate concerns from credit card and transaction management. By removing these features from the CreditCardManager class, the API becomes more focused and adheres to the principle of separation of concerns, making it easier to maintain and understand.
+ * @subsection removed_features_subsec Removed Features
  *
- * - Security Considerations: Handling authentication and password hashing within the credit card management module could introduce security risks if not implemented correctly. By removing these features, the API avoids potential security vulnerabilities and ensures that authentication is handled by dedicated authentication modules that are designed and maintained with security best practices in mind.
+ * - Removed `get_balance` Method: The `get_balance` method in the Account class has been removed to streamline the API and encourage the use of the enhanced `get_balance_v2` method, which offers advanced functionality for retrieving account balances based on specified criteria.
+ * 
+* @section enhancements_sec Enhancements in Version 2.0
  *
- * - Simplicity and Clarity: Removing authentication-related features simplifies the API interface, making it clearer and easier to use for developers who only need credit card and transaction management functionality. It reduces unnecessary complexity and avoids confusion about the responsibilities of the CreditCardManager class.
+ * @subsection two_factor_auth_subsec Two-Factor Authentication
  *
- * @section remarks_sec Remarks
- *
- * The removal of authentication-related features from the CreditCardManager class does not affect the core functionality of managing credit cards, transactions, and accounts. Developers can integrate authentication and session management separately into their applications using dedicated authentication libraries or frameworks, ensuring a more modular and secure design.
- *
- * Additionally, the API continues to provide comprehensive methods for managing credit cards (CreditCard class), transactions (Transaction class), accounts (Account class), and sessions (Session class), enabling developers to build robust and secure financial applications with ease.
+ * - Enhanced Security: Version 2.0 introduces support for two-factor authentication (2FA) to bolster the security of user accounts. With 2FA enabled, users are required to provide two forms of identification to access their accounts, typically a combination of something they know (e.g., a password) and something they have (e.g., a mobile device).
+ * - Improved Account Protection: By implementing 2FA, the API enhances account protection against unauthorized access attempts, such as brute-force attacks or password breaches. This additional layer of security helps safeguard sensitive financial data and user information.
+ * - Flexible Configuration: The two-factor authentication feature in version 2.0 offers flexibility in configuration, allowing developers to customize the authentication process based on their application's security requirements and user preferences. Options may include SMS-based verification codes, email verification links, or authenticator app integration.
+ * - Seamless Integration: Developers can seamlessly integrate two-factor authentication into their applications using the API's authentication endpoints and session management functionalities. The API provides clear documentation and examples for implementing 2FA, ensuring a smooth user experience without compromising security.
  *
  * @section getting_started_sec Getting Started
  *
- * To get started with using the Credit Card Management API, refer to the documentation pages for detailed information on classes, methods, and parameters.
+ * To get started with using the Credit Card Management API, follow these steps:
+ *
+ * 1. **Integration**: Integrate the API into your application by importing the necessary modules.
+ * 2. **Initialization**: Initialize the necessary objects, such as accounts and credit cards, to start managing financial data.
+ * 3. **Usage**: Utilize the API methods to perform operations such as adding transactions, updating balances, and managing credit card information.
+ * 4. **Security**: Ensure that proper authentication and authorization mechanisms are implemented to secure access to sensitive financial data.
  *
  * @section api_reference_sec API Reference
  *
@@ -38,8 +49,72 @@
  * - @ref transaction_page "Transaction Class"
  * - @ref session_page "Session Class"
  *
+ * @section getting_started Getting Started with API Usage (Python)
+ * To start using the CreditCardManagementSystem API in your Python project, follow these steps:
+ * 
+ * - **Step 1:** Install the package using pip:
+ *   ```bash
+ *   pip install CreditCardManagementSystem
+ *   ```
+ * 
+ * - **Step 2:** Import the necessary modules in your Python script:
+ *   ```python
+ *   from CreditCardManager import CreditCardManager
+ *   from credit_card.credit_card import CreditCard
+ *   from credit_card.transaction import Transaction
+ *   from account.account import Account
+ *   ```
+ * 
+ * - **Step 3:** Start utilizing the API functionalities as demonstrated in the sample code provided below.
+ *
+ * @section sample_code_sec Sample Code
+ *
+ * Here's an example of how to use the API to initiate a payment transaction:
+ *
+ * ```python
+ * # Initialize CreditCardManager and create a new account
+ * credit_card_manager = CreditCardManager()
+ * user_account = credit_card_manager.create_account("user123")
+ *
+ * # Add a credit card to the account
+ * card = CreditCard("1234567890123456", datetime(2025, 12, 31), "123")
+ * user_account.add_card(card.number, card.expiration_date, card.cvv)
+ *
+ * # Initiate a payment using a saved card
+ * payment_successful = credit_card_manager.initiate_payment(
+ *     user_account.user_id, card.number, 50.00, "Online Store")
+ *
+ * if payment_successful:
+ *     print("Payment successful!")
+ *     # Update account balance based on the transaction
+ *     user_account.update_balance(Transaction(user_account.user_id, 50.00, datetime.now(), "Online Store", True))
+ *     print(f"Current account balance: ${user_account.get_balance_v2():.2f}")
+ * else:
+ *     print("Payment failed!")    
+ * ```
+ *
+ * @section details Details
+ * - Functionality: Provides functionalities for managing accounts, credit cards, transactions, sessions, and balance tracking.
+ * - Endpoints: Includes operations such as creating, retrieving, and removing accounts, adding and removing credit cards, managing transactions, and handling user sessions.
+ * - Sample Code Usage Explanation: Demonstrates how to interact with the API, including creating accounts, adding credit cards, managing transactions, and handling user sessions.
+ * - API Usage Guidelines: Offers guidelines for utilizing the API effectively, ensuring proper authentication, transaction management, and balance tracking.
+ * - Error Handling: Basic error handling mechanisms are included to manage invalid requests or unauthorized access.
+ * - Security: Introduces basic security measures such as session token generation and validation.
+ * - Usability: Emphasizes simplicity and ease of use, catering to developers who need to integrate credit card management functionalities into their applications.
+ *
+ * @section support_sec Support and Feedback
+ *
+ * If you have any questions, issues, or feedback regarding the Credit Card Management API, please feel free to
+ * [contact our Siva & Karuna team](mailto:sivakaruna@example.com). We are committed to providing assistance and improving
+ * the API based on user feedback.
+ *
+ * @section remarks Remarks
+ * - Version 2.0 removes the deprecated `get_balance` method, encouraging users to utilize the more advanced `get_balance_v2` method for enhanced functionality.
+ * - Future versions will continue to build upon existing features and address user feedback to ensure the API meets evolving needs and industry standards.
  *
  * @section version_sec Version History
  *
- * - Version 2.0: Enhanced functionality and security with the removal of authentication-related features from the CreditCardManager class.
+ * - Version 1.0: Initial release of the Credit Card Management API.
+ * - Version 1.5: Introduced enhancements and deprecated features for improved functionality and usability.
+ * - Version 2.0: Removes deprecated features and focuses on streamlining the API for better efficiency and usability.Enhanced functionality and security with the removal of authentication-related features from the CreditCardManager class.
  */
