@@ -101,13 +101,27 @@ class CreditCardDatabase:
 
 
 
+
 class TransactionDatabase:
-    def __init__(self, db_name='transactions.db'):
-        self.connection = sqlite3.connect(db_name)
-        self.cursor = self.connection.cursor()
+    """
+    A class for interacting with a SQLite database to store and manage transaction data.
+    """
+
+    def __init__(self, db_name: str = 'transactions.db') -> None:
+        """
+        Initializes a connection to the SQLite database for transactions.
+
+        Args:
+            db_name (str, optional): The name of the database file. Defaults to 'transactions.db'.
+        """
+        self.connection: sqlite3.Connection = sqlite3.connect(db_name)
+        self.cursor: sqlite3.Cursor = self.connection.cursor()
         self.create_table()
 
-    def create_table(self):
+    def create_table(self) -> None:
+        """
+        Creates the 'transactions' table in the database if it doesn't already exist.
+        """
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS transactions (
                 id INTEGER PRIMARY KEY,
@@ -119,22 +133,48 @@ class TransactionDatabase:
         ''')
         self.connection.commit()
 
-    def close(self):
+    def close(self) -> None:
+        """
+        Closes the connection to the database.
+        """
         self.connection.close()
 
-    def add_transaction(self, user_id, amount, date, merchant):
+    def add_transaction(self, user_id: str, amount: float, date: str, merchant: str) -> None:
+        """
+        Adds a new transaction record to the database.
+
+        Args:
+            user_id (str): The ID of the user who made the transaction.
+            amount (float): The transaction amount.
+            date (str): The date of the transaction (in a format suitable for storage in a TEXT column).
+            merchant (str): The merchant for the transaction.
+        """
         self.cursor.execute('''
             INSERT INTO transactions (user_id, amount, date, merchant)
             VALUES (?, ?, ?, ?)
         ''', (user_id, amount, date, merchant))
         self.connection.commit()
 
-    def get_transactions_by_user_id(self, user_id):
+    def get_transactions_by_user_id(self, user_id: str) -> list[tuple]:
+        """
+        Retrieves all transactions for a specific user from the database.
+
+        Args:
+            user_id (str): The ID of the user for whom to retrieve transactions.
+
+        Returns:
+            list[tuple]: A list of tuples where each tuple represents a transaction record
+                (id, user_id, amount, date, merchant).
+        """
         self.cursor.execute('SELECT * FROM transactions WHERE user_id=?', (user_id,))
         return self.cursor.fetchall()
 
-    def delete_transaction(self, transaction_id):
+    def delete_transaction(self, transaction_id: int) -> None:
+        """
+        Deletes a transaction record from the database based on its ID.
+
+        Args:
+            transaction_id (int): The ID of the transaction to be deleted.
+        """
         self.cursor.execute('DELETE FROM transactions WHERE id=?', (transaction_id,))
         self.connection.commit()
-
-

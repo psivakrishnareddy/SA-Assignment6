@@ -3,6 +3,7 @@ from ast import List
 from credit_card.database import CreditCardDatabase, TransactionDatabase
 from credit_card.transaction import Transaction
 from typing_extensions import deprecated
+import warnings
 
 class Account:
     """
@@ -76,18 +77,21 @@ class Account:
         """
         return self.transaction_db.get_transactions_by_user_id(self.user_id)
     
-    # @deprecated(version="1.0", reason="This method is deprecated in 1.0. Use get_balance_v2() instead.")
     @deprecated("This methods is deprecated in Version 1.0, Use get_balance_v2() instead which is upgraded version.")
     def get_balance(self) -> float:
         """
         Returns the current account balance.
 
+        This method is DEPRECATED in Version 1.0. Use get_balance_v2() instead.
+
         Returns:
             The current balance (float).
         """
+        warnings.warn("get_balance() is deprecated. Use get_balance_v2() instead.",
+                      DeprecationWarning, stacklevel=2)
         return self.balance
     
-    def get_balance_v2(self, start_date=None, end_date=None, transaction_type=None, merchant=None):
+    def get_balance_v2(self, start_date=None, end_date=None, transaction_type=None, merchant=None) -> float:
         """
         Retrieves the current account balance based on specified criteria for filtering transactions.
 
