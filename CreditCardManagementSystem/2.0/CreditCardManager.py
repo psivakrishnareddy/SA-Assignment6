@@ -1,4 +1,6 @@
 import datetime
+from hashlib import sha256
+import secrets
 from typing import List, Optional
 from account.account import Account
 from account.database import AccountDatabase
@@ -132,72 +134,45 @@ class CreditCardManager:
 
         return False        
             
-    # def authenticate_user(self, user_id, password):
-    #     """
-    #     Authenticates the user with the given user ID and password.
+    def authenticate_user(self, user_id, password):
+        """
+        Authenticates the user with the given user ID and password.
 
-    #     Parameters:
-    #     - user_id (str): The ID of the user.
-    #     - password (str): The password for the user.
+        Parameters:
+        - user_id (str): The ID of the user.
+        - password (str): The password for the user.
 
-    #     Returns:
-    #     - bool: True if authentication is successful, False otherwise.
-    #     """
-    #     account = self.account_db.get_account_by_user_id(user_id)
-    #     if account:
-    #         hashed_password = account[2]  # Assuming password hash is stored in the third column
-    #         if self._verify_password(password, hashed_password):
-    #             return True
-    #     return False
+        Returns:
+        - bool: True if authentication is successful, False otherwise.
+        """
+        account = self.account_db.get_account_by_user_id(user_id)
+        if account:
+            hashed_password = "HASEDPASSWORDS"  # Assuming password hash is stored in the third column
+            if self._verify_password(password, hashed_password):
+                return True
+        return False
 
-    # def authorize_session(self, user_id):
-    #     """
-    #     Generates and returns a session token for the authenticated user.
+    def _hash_password(self, password):
+        """
+        Hashes the provided password using SHA-256.
 
-    #     Parameters:
-    #     - user_id (str): The ID of the user.
+        Parameters:
+        - password (str): The password to be hashed.
 
-    #     Returns:
-    #     - str: The generated session token.
-    #     """
-    #     session_token = secrets.token_hex(16)
-    #     self.sessions[user_id] = session_token
-    #     return session_token
+        Returns:
+        - str: The hashed password.
+        """
+        return sha256(password.encode()).hexdigest()
 
-    # def is_authorized(self, user_id, session_token):
-    #     """
-    #     Checks if the user with the given user ID has an active session with the provided session token.
+    def _verify_password(self, password, hashed_password):
+        """
+        Verifies the provided password against the hashed password.
 
-    #     Parameters:
-    #     - user_id (str): The ID of the user.
-    #     - session_token (str): The session token to be verified.
+        Parameters:
+        - password (str): The password to be verified.
+        - hashed_password (str): The hashed password.
 
-    #     Returns:
-    #     - bool: True if the user is authorized, False otherwise.
-    #     """
-    #     return user_id in self.sessions and self.sessions[user_id] == session_token
-
-    # def _hash_password(self, password):
-    #     """
-    #     Hashes the provided password using SHA-256.
-
-    #     Parameters:
-    #     - password (str): The password to be hashed.
-
-    #     Returns:
-    #     - str: The hashed password.
-    #     """
-    #     return sha256(password.encode()).hexdigest()
-
-    # def _verify_password(self, password, hashed_password):
-    #     """
-    #     Verifies the provided password against the hashed password.
-
-    #     Parameters:
-    #     - password (str): The password to be verified.
-    #     - hashed_password (str): The hashed password.
-
-    #     Returns:
-    #     - bool: True if the password matches the hashed password, False otherwise.
-    #     """
-    #     return hashed_password == self._hash_password(password)
+        Returns:
+        - bool: True if the password matches the hashed password, False otherwise.
+        """
+        return hashed_password == self._hash_password(password)
