@@ -1,0 +1,145 @@
+\doxysection{Credit\+Card\+Database Class Reference}
+\hypertarget{classcredit__card_1_1database_1_1_credit_card_database}{}\label{classcredit__card_1_1database_1_1_credit_card_database}\index{CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_adaaa33a84200924c0418d2075a34474f}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str db\+\_\+name=\textquotesingle{}credit\+\_\+cards.\+db\textquotesingle{})
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_a2984a1deec0b9996f020ac72f27bff76}{create\+\_\+tables}} (self)
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_a0931e4315d67c08986a0c4a9bfc43ca9}{close}} (self)
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_a120d00cd78d02ff6179475ecf11c60e3}{add\+\_\+credit\+\_\+card}} (self, str number, str expiration\+\_\+date, str cvv)
+\item 
+Optional\mbox{[}Tuple\mbox{[}int, str, str, str\mbox{]}\mbox{]} \mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_a84e5e8409dabf19c1c4fbfa2a6ceec35}{get\+\_\+credit\+\_\+card\+\_\+by\+\_\+id}} (self, int card\+\_\+id)
+\item 
+List\mbox{[}Tuple\mbox{[}int, str, str, str\mbox{]}\mbox{]} \mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_a5904e717611833b9372776fb784135ea}{get\+\_\+all\+\_\+credit\+\_\+cards}} (self)
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_aa2db50cac61b2918498838bb7b428c21}{update\+\_\+credit\+\_\+card}} (self, int card\+\_\+id, str number, str expiration\+\_\+date, str cvv)
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_a244abf15469a9eeb52ce14b9b71dfd46}{delete\+\_\+credit\+\_\+card}} (self, int card\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_a10275a078bd1abcbebc206cc5d19e18b}{connection}}
+\item 
+\mbox{\hyperlink{classcredit__card_1_1database_1_1_credit_card_database_aa8438784f03812b918cb36a35cf9be0e}{cursor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_adaaa33a84200924c0418d2075a34474f}\label{classcredit__card_1_1database_1_1_credit_card_database_adaaa33a84200924c0418d2075a34474f} 
+\index{CreditCardDatabase@{CreditCardDatabase}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None \+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str }]{db\+\_\+name = {\ttfamily \textquotesingle{}credit\+\_\+cards.db\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the CreditCardDatabase object.
+
+Parameters:
+- db_name (str): The name of the SQLite database file.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_a120d00cd78d02ff6179475ecf11c60e3}\label{classcredit__card_1_1database_1_1_credit_card_database_a120d00cd78d02ff6179475ecf11c60e3} 
+\index{CreditCardDatabase@{CreditCardDatabase}!add\_credit\_card@{add\_credit\_card}}
+\index{add\_credit\_card@{add\_credit\_card}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{add\_credit\_card()}{add\_credit\_card()}}
+{\footnotesize\ttfamily  None add\+\_\+credit\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{number,  }\item[{str}]{expiration\+\_\+date,  }\item[{str}]{cvv }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a credit card to the database.
+
+Parameters:
+- number (str): The credit card number.
+- expiration_date (str): The expiration date of the credit card.
+- cvv (str): The CVV code of the credit card.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_a0931e4315d67c08986a0c4a9bfc43ca9}\label{classcredit__card_1_1database_1_1_credit_card_database_a0931e4315d67c08986a0c4a9bfc43ca9} 
+\index{CreditCardDatabase@{CreditCardDatabase}!close@{close}}
+\index{close@{close}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily  None close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Close the database connection.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_a2984a1deec0b9996f020ac72f27bff76}\label{classcredit__card_1_1database_1_1_credit_card_database_a2984a1deec0b9996f020ac72f27bff76} 
+\index{CreditCardDatabase@{CreditCardDatabase}!create\_tables@{create\_tables}}
+\index{create\_tables@{create\_tables}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{create\_tables()}{create\_tables()}}
+{\footnotesize\ttfamily  None create\+\_\+tables (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create necessary tables if they don't exist in the database.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_a244abf15469a9eeb52ce14b9b71dfd46}\label{classcredit__card_1_1database_1_1_credit_card_database_a244abf15469a9eeb52ce14b9b71dfd46} 
+\index{CreditCardDatabase@{CreditCardDatabase}!delete\_credit\_card@{delete\_credit\_card}}
+\index{delete\_credit\_card@{delete\_credit\_card}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{delete\_credit\_card()}{delete\_credit\_card()}}
+{\footnotesize\ttfamily  None delete\+\_\+credit\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{card\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Delete a credit card from the database.
+
+Parameters:
+- card_id (int): The ID of the credit card to delete.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_a5904e717611833b9372776fb784135ea}\label{classcredit__card_1_1database_1_1_credit_card_database_a5904e717611833b9372776fb784135ea} 
+\index{CreditCardDatabase@{CreditCardDatabase}!get\_all\_credit\_cards@{get\_all\_credit\_cards}}
+\index{get\_all\_credit\_cards@{get\_all\_credit\_cards}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_all\_credit\_cards()}{get\_all\_credit\_cards()}}
+{\footnotesize\ttfamily  List\mbox{[}Tuple\mbox{[}int, str, str, str\mbox{]}\mbox{]} get\+\_\+all\+\_\+credit\+\_\+cards (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieve all credit cards from the database.
+
+Returns:
+- List[Tuple[int, str, str, str]]: A list of tuples containing credit card ID, number, expiration date, and CVV.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_a84e5e8409dabf19c1c4fbfa2a6ceec35}\label{classcredit__card_1_1database_1_1_credit_card_database_a84e5e8409dabf19c1c4fbfa2a6ceec35} 
+\index{CreditCardDatabase@{CreditCardDatabase}!get\_credit\_card\_by\_id@{get\_credit\_card\_by\_id}}
+\index{get\_credit\_card\_by\_id@{get\_credit\_card\_by\_id}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_credit\_card\_by\_id()}{get\_credit\_card\_by\_id()}}
+{\footnotesize\ttfamily  Optional\mbox{[}Tuple\mbox{[}int, str, str, str\mbox{]}\mbox{]} get\+\_\+credit\+\_\+card\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{card\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieve a credit card by its ID from the database.
+
+Parameters:
+- card_id (int): The ID of the credit card.
+
+Returns:
+- Tuple[int, str, str, str]: A tuple containing the credit card ID, number, expiration date, and CVV,
+  or None if no credit card with the given ID exists.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_aa2db50cac61b2918498838bb7b428c21}\label{classcredit__card_1_1database_1_1_credit_card_database_aa2db50cac61b2918498838bb7b428c21} 
+\index{CreditCardDatabase@{CreditCardDatabase}!update\_credit\_card@{update\_credit\_card}}
+\index{update\_credit\_card@{update\_credit\_card}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{update\_credit\_card()}{update\_credit\_card()}}
+{\footnotesize\ttfamily  None update\+\_\+credit\+\_\+card (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{card\+\_\+id,  }\item[{str}]{number,  }\item[{str}]{expiration\+\_\+date,  }\item[{str}]{cvv }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update a credit card in the database.
+
+Parameters:
+- card_id (int): The ID of the credit card to update.
+- number (str): The updated credit card number.
+- expiration_date (str): The updated expiration date of the credit card.
+- cvv (str): The updated CVV code of the credit card.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_a10275a078bd1abcbebc206cc5d19e18b}\label{classcredit__card_1_1database_1_1_credit_card_database_a10275a078bd1abcbebc206cc5d19e18b} 
+\index{CreditCardDatabase@{CreditCardDatabase}!connection@{connection}}
+\index{connection@{connection}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{connection}{connection}}
+{\footnotesize\ttfamily connection}
+
+\Hypertarget{classcredit__card_1_1database_1_1_credit_card_database_aa8438784f03812b918cb36a35cf9be0e}\label{classcredit__card_1_1database_1_1_credit_card_database_aa8438784f03812b918cb36a35cf9be0e} 
+\index{CreditCardDatabase@{CreditCardDatabase}!cursor@{cursor}}
+\index{cursor@{cursor}!CreditCardDatabase@{CreditCardDatabase}}
+\doxysubsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily cursor}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+credit\+\_\+card/\mbox{\hyperlink{credit__card_2database_8py}{database.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,87 @@
+\chapter{Credit Card Management API (Version 1.0)}
+\hypertarget{index}{}\label{index}\index{Credit Card Management API (Version 1.0)@{Credit Card Management API (Version 1.0)}}
+\hypertarget{index_intro_sec}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{index_intro_sec}
+Welcome to the documentation for the Credit Card Management API version 1.\+0! This API provides a set of functionalities for managing credit cards, transactions, and accounts within a financial system. It offers developers the tools they need to build secure and efficient applications for handling credit card-\/related operations.\hypertarget{index_features_sec}{}\doxysection{\texorpdfstring{Key Features}{Key Features}}\label{index_features_sec}
+
+\begin{DoxyItemize}
+\item Credit Card Management\+: Create, retrieve, update, and delete credit card information.
+\item Transaction Management\+: Record transactions, retrieve transaction history, and update transaction details.
+\item Account Management\+: Manage user accounts, including adding and removing credit cards, and retrieving account information.
+\item Authentication and Authorization\+: Authenticate users and authorize sessions for secure access to API endpoints.
+\end{DoxyItemize}\hypertarget{index_getting_started_sec}{}\doxysection{\texorpdfstring{Getting Started}{Getting Started}}\label{index_getting_started_sec}
+To get started with using the Credit Card Management API, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Integration}}\+: Integrate the API into your application by importing the necessary modules.
+\item {\bfseries{Initialization}}\+: Initialize the necessary objects, such as accounts and credit cards, to start managing financial data.
+\item {\bfseries{Usage}}\+: Utilize the API methods to perform operations such as adding transactions, updating balances, and managing credit card information.
+\item {\bfseries{Security}}\+: Ensure that proper authentication and authorization mechanisms are implemented to secure access to sensitive financial data.
+\end{DoxyEnumerate}\hypertarget{index_api_reference_sec}{}\doxysection{\texorpdfstring{API Reference}{API Reference}}\label{index_api_reference_sec}
+For detailed information on the classes, methods, and parameters provided by the API, refer to the following documentation pages\+:
+
+
+\begin{DoxyItemize}
+\item Account Class
+\item Credit\+Card Class
+\item Transaction Class
+\item Session Class
+\end{DoxyItemize}\hypertarget{index_getting_started}{}\doxysection{\texorpdfstring{Getting Started with API Usage (Python)}{Getting Started with API Usage (Python)}}\label{index_getting_started}
+To start using the Credit\+Card\+Management\+System API in your Python project, follow these steps\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Step 1\+:}} Install the package using pip\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip\ install\ CreditCardManagementSystem}
+
+\end{DoxyCode}
+
+\item {\bfseries{Step 2\+:}} Import the necessary modules in your Python script\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{from}\ CreditCardManager\ \textcolor{keyword}{import}\ CreditCardManager}
+\DoxyCodeLine{\textcolor{keyword}{from}\ \mbox{\hyperlink{namespacecredit__card_1_1credit__card}{credit\_card.credit\_card}}\ \textcolor{keyword}{import}\ CreditCard}
+\DoxyCodeLine{\textcolor{keyword}{from}\ \mbox{\hyperlink{namespacecredit__card_1_1transaction}{credit\_card.transaction}}\ \textcolor{keyword}{import}\ Transaction}
+\DoxyCodeLine{\textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceaccount_1_1account}{account.account}}\ \textcolor{keyword}{import}\ Account}
+
+\end{DoxyCode}
+
+\item {\bfseries{Step 3\+:}} Start utilizing the API functionalities as demonstrated in the sample code provided below.
+\end{DoxyItemize}\hypertarget{index_sample_code_sec}{}\doxysection{\texorpdfstring{Sample Code}{Sample Code}}\label{index_sample_code_sec}
+Here\textquotesingle{}s an example of how to use the API to initiate a payment transaction\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Initialize\ CreditCardManager\ and\ create\ a\ new\ account}}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_credit_card_manager}{CreditCardManager}}\ creditCardManager;}
+\DoxyCodeLine{Account\ \mbox{\hyperlink{namespaceaccount}{account}}\ =\ creditCardManager.createAccount(\textcolor{stringliteral}{"{}user123"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Add\ a\ credit\ card\ to\ the\ account}}
+\DoxyCodeLine{CreditCard\ \mbox{\hyperlink{namespacemain_a3bc13ef433c58c7e808ef40088f32252}{card}}(\textcolor{stringliteral}{"{}1234567890123456"{}},\ \textcolor{stringliteral}{"{}12/25"{}},\ \textcolor{stringliteral}{"{}123"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceaccount}{account}}.addCard(card);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Initiate\ a\ payment\ transaction}}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ paymentSuccessful\ =\ creditCardManager.initiatePayment(\mbox{\hyperlink{namespaceaccount}{account}},\ card,\ 100.0,\ \textcolor{stringliteral}{"{}Online\ Store"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (paymentSuccessful)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Payment\ successful!"{}}\ <<\ endl;}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Payment\ failed."{}}\ <<\ endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_details}{}\doxysection{\texorpdfstring{Details}{Details}}\label{index_details}
+
+\begin{DoxyItemize}
+\item Functionality\+: Provides functionalities for managing accounts, credit cards, transactions, and sessions.
+\item Endpoints\+: Includes operations such as creating, retrieving, and removing accounts, adding and removing credit cards, managing transactions, and handling user sessions.
+\item Sample Code Usage Explanation\+: Demonstrates how to interact with the API, including creating accounts, adding credit cards, managing transactions, and handling user sessions.
+\item API Usage Guidelines\+: Offers guidelines for utilizing the API effectively, ensuring proper authentication and transaction management.
+\item Error Handling\+: Basic error handling mechanisms are included to manage invalid requests or unauthorized access.
+\item Security\+: Introduces basic security measures such as session token generation and validation.
+\item Usability\+: Emphasizes simplicity and ease of use, catering to developers who need to integrate credit card management functionalities into their applications.
+\end{DoxyItemize}\hypertarget{index_support_sec}{}\doxysection{\texorpdfstring{Support and Feedback}{Support and Feedback}}\label{index_support_sec}
+If you have any questions, issues, or feedback regarding the Credit Card Management API, please feel free to \href{mailto:sivakaruna@example.com}{\texttt{ contact our Siva \& Karuna team}}. We are committed to providing assistance and improving the API based on user feedback.\hypertarget{index_version_sec}{}\doxysection{\texorpdfstring{Version History}{Version History}}\label{index_version_sec}
+
+\begin{DoxyItemize}
+\item Version 1.\+0\+: Initial release of the Credit Card Management API. 
+\end{DoxyItemize}

@@ -1,0 +1,100 @@
+\doxysection{Transaction\+Database Class Reference}
+\hypertarget{classcredit__card_1_1database_1_1_transaction_database}{}\label{classcredit__card_1_1database_1_1_transaction_database}\index{TransactionDatabase@{TransactionDatabase}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_transaction_database_a05ff9f174b9f306acfa50927bbb46950}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str db\+\_\+name=\textquotesingle{}transactions.\+db\textquotesingle{})
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_transaction_database_a7f030983020a30f57f037c4af07745d8}{create\+\_\+table}} (self)
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_transaction_database_a0931e4315d67c08986a0c4a9bfc43ca9}{close}} (self)
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_transaction_database_a64c8892bb704a339a47ac10493f3b6d3}{add\+\_\+transaction}} (self, str user\+\_\+id, float amount, str date, str merchant)
+\item 
+list\mbox{[}tuple\mbox{]} \mbox{\hyperlink{classcredit__card_1_1database_1_1_transaction_database_a0fdfd4472be52dab8dc11ec9657ed17f}{get\+\_\+transactions\+\_\+by\+\_\+user\+\_\+id}} (self, str user\+\_\+id)
+\item 
+None \mbox{\hyperlink{classcredit__card_1_1database_1_1_transaction_database_a9ffe00542b5b58d3dc78aa824b7ff147}{delete\+\_\+transaction}} (self, int transaction\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A class for interacting with a SQLite database to store and manage transaction data.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcredit__card_1_1database_1_1_transaction_database_a05ff9f174b9f306acfa50927bbb46950}\label{classcredit__card_1_1database_1_1_transaction_database_a05ff9f174b9f306acfa50927bbb46950} 
+\index{TransactionDatabase@{TransactionDatabase}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!TransactionDatabase@{TransactionDatabase}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None \+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str }]{db\+\_\+name = {\ttfamily \textquotesingle{}transactions.db\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes a connection to the SQLite database for transactions.
+
+Args:
+    db_name (str, optional): The name of the database file. Defaults to 'transactions.db'.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcredit__card_1_1database_1_1_transaction_database_a64c8892bb704a339a47ac10493f3b6d3}\label{classcredit__card_1_1database_1_1_transaction_database_a64c8892bb704a339a47ac10493f3b6d3} 
+\index{TransactionDatabase@{TransactionDatabase}!add\_transaction@{add\_transaction}}
+\index{add\_transaction@{add\_transaction}!TransactionDatabase@{TransactionDatabase}}
+\doxysubsubsection{\texorpdfstring{add\_transaction()}{add\_transaction()}}
+{\footnotesize\ttfamily  None add\+\_\+transaction (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{user\+\_\+id,  }\item[{float}]{amount,  }\item[{str}]{date,  }\item[{str}]{merchant }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a new transaction record to the database.
+
+Args:
+    user_id (str): The ID of the user who made the transaction.
+    amount (float): The transaction amount.
+    date (str): The date of the transaction (in a format suitable for storage in a TEXT column).
+    merchant (str): The merchant for the transaction.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_transaction_database_a0931e4315d67c08986a0c4a9bfc43ca9}\label{classcredit__card_1_1database_1_1_transaction_database_a0931e4315d67c08986a0c4a9bfc43ca9} 
+\index{TransactionDatabase@{TransactionDatabase}!close@{close}}
+\index{close@{close}!TransactionDatabase@{TransactionDatabase}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily  None close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Closes the connection to the database.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_transaction_database_a7f030983020a30f57f037c4af07745d8}\label{classcredit__card_1_1database_1_1_transaction_database_a7f030983020a30f57f037c4af07745d8} 
+\index{TransactionDatabase@{TransactionDatabase}!create\_table@{create\_table}}
+\index{create\_table@{create\_table}!TransactionDatabase@{TransactionDatabase}}
+\doxysubsubsection{\texorpdfstring{create\_table()}{create\_table()}}
+{\footnotesize\ttfamily  None create\+\_\+table (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates the 'transactions' table in the database if it doesn't already exist.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_transaction_database_a9ffe00542b5b58d3dc78aa824b7ff147}\label{classcredit__card_1_1database_1_1_transaction_database_a9ffe00542b5b58d3dc78aa824b7ff147} 
+\index{TransactionDatabase@{TransactionDatabase}!delete\_transaction@{delete\_transaction}}
+\index{delete\_transaction@{delete\_transaction}!TransactionDatabase@{TransactionDatabase}}
+\doxysubsubsection{\texorpdfstring{delete\_transaction()}{delete\_transaction()}}
+{\footnotesize\ttfamily  None delete\+\_\+transaction (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{transaction\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Deletes a transaction record from the database based on its ID.
+
+Args:
+    transaction_id (int): The ID of the transaction to be deleted.
+\end{DoxyVerb}
+ \Hypertarget{classcredit__card_1_1database_1_1_transaction_database_a0fdfd4472be52dab8dc11ec9657ed17f}\label{classcredit__card_1_1database_1_1_transaction_database_a0fdfd4472be52dab8dc11ec9657ed17f} 
+\index{TransactionDatabase@{TransactionDatabase}!get\_transactions\_by\_user\_id@{get\_transactions\_by\_user\_id}}
+\index{get\_transactions\_by\_user\_id@{get\_transactions\_by\_user\_id}!TransactionDatabase@{TransactionDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_transactions\_by\_user\_id()}{get\_transactions\_by\_user\_id()}}
+{\footnotesize\ttfamily  list\mbox{[}tuple\mbox{]} get\+\_\+transactions\+\_\+by\+\_\+user\+\_\+id (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{user\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves all transactions for a specific user from the database.
+
+Args:
+    user_id (str): The ID of the user for whom to retrieve transactions.
+
+Returns:
+    list[tuple]: A list of tuples where each tuple represents a transaction record
+        (id, user_id, amount, date, merchant).
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+credit\+\_\+card/\mbox{\hyperlink{credit__card_2database_8py}{database.\+py}}\end{DoxyCompactItemize}

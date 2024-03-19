@@ -54,7 +54,7 @@ PROJECT_NUMBER         = 2.0
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "The API provides functionality to manage user accounts, credit cards, transactions, and user sessions. It allows users to perform operations such as adding and removing credit cards, adding transactions, retrieving transaction details, and managing user sessions. The design aims for simplicity, ease of use, and security in handling sensitive financial information."
+PROJECT_BRIEF          = "The API provides functionality to manage user accounts, credit cards, transactions, and user sessions."
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
@@ -74,7 +74,7 @@ PROJECT_ICON           =
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = /Users/kodavatimohankarunakumari/Downloads/SA-Assignment6/CreditCardManagementSystem/2.0/Doxygen_DocumentationV2
+OUTPUT_DIRECTORY       = /Users/kodavatimohankarunakumari/Downloads/SA-Assignment6/CreditCardManagementSystem/2.0/DoxygenDocumentationV2
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
