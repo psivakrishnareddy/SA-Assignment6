@@ -32,7 +32,7 @@ print(card.get_masked_number())
 for transaction in user_account.get_transactions():
     print(transaction)
 
-print("Balance: " + user_account.balance)    
+print("Balance: " ,user_account.balance)    
 
 # Validate session token
 session = credit_card_manager.get_session(token)
