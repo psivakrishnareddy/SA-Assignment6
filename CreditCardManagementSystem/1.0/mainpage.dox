@@ -33,6 +33,24 @@
  * - @ref transaction_page "Transaction Class"
  * - @ref session_page "Session Class"
  *
+ * @section getting_started Getting Started with API Usage (Python)
+ * To start using the CreditCardManagementSystem API in your Python project, follow these steps:
+ * 
+ * - **Step 1:** Install the package using pip:
+ *   ```bash
+ *   pip install CreditCardManagementSystem
+ *   ```
+ * 
+ * - **Step 2:** Import the necessary modules in your Python script:
+ *   ```python
+ *   from CreditCardManager import CreditCardManager
+ *   from credit_card.credit_card import CreditCard
+ *   from credit_card.transaction import Transaction
+ *   from account.account import Account
+ *   ```
+ * 
+ * - **Step 3:** Start utilizing the API functionalities as demonstrated in the sample code provided below.
+ *
  * @section sample_code_sec Sample Code
  *
  * Here's an example of how to use the API to initiate a payment transaction:
@@ -55,13 +73,24 @@
  * }
  * ```
  *
+ * @section details Details
+ * - Functionality: Provides functionalities for managing accounts, credit cards, transactions, and sessions.
+ * - Endpoints: Includes operations such as creating, retrieving, and removing accounts, adding and removing credit cards, managing transactions, and handling user sessions.
+ * - Sample Code Usage Explanation: Demonstrates how to interact with the API, including creating accounts, adding credit cards, managing transactions, and handling user sessions.
+ * - API Usage Guidelines: Offers guidelines for utilizing the API effectively, ensuring proper authentication and transaction management.
+ * - Error Handling: Basic error handling mechanisms are included to manage invalid requests or unauthorized access.
+ * - Security: Introduces basic security measures such as session token generation and validation.
+ * - Usability: Emphasizes simplicity and ease of use, catering to developers who need to integrate credit card management functionalities into their applications.
+ *
  * @section support_sec Support and Feedback
  *
  * If you have any questions, issues, or feedback regarding the Credit Card Management API, please feel free to
- * [contact our support team](mailto:support@example.com). We are committed to providing assistance and improving
+ * [contact our Siva & Karuna  team](mailto:sivakaruna@example.com). We are committed to providing assistance and improving
  * the API based on user feedback.
  *
  * @section version_sec Version History
  *
  * - Version 1.0: Initial release of the Credit Card Management API.
  */
+
+
